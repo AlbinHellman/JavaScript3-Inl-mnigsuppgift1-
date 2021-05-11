@@ -1,6 +1,8 @@
 import React from 'react'
 import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom'
 import { addToCart } from '../../store/actions/cartActions';
+
 
 const ProductCard = ({product}) => {
 
@@ -9,6 +11,7 @@ const ProductCard = ({product}) => {
   return (
     <div className="col">
       <div className="card h-100">
+       
         <img
           src={product.image}
           className="card-img-top"
@@ -22,9 +25,7 @@ const ProductCard = ({product}) => {
           <button className="btn btn-info" onClick={() => {
             dispatch(addToCart(product))
           }}>Add to cart</button>
-          <button className="btn btn-info" onClick={() => {
-            dispatch(addToCart(product))
-          }}>View Product</button>
+          <Link to={`/products/:id`}><button className="btn btn-info">View Product</button></Link>
           </div>
         </div>
       </div>

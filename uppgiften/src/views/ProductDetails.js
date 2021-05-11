@@ -1,13 +1,36 @@
-import React from 'react'
-import { useDispatch } from 'react-redux';
-import { addToCart } from '../../store/actions/cartActions';
-import { getProductCatalog } from '../store/actions/productCatalogActions';
+import {React, useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
+import { getOneProduct, setProduct } from '../store/actions/productCatalogActions';
+import { useParams } from 'react-router-dom';
 
-const ProductDetails = ({product}) => {
 
+
+const ProductDetails = () => {
+
+    const id = useParams().id
   const dispatch = useDispatch();
+ 
 
-  return (
+  useEffect(() => {
+      dispatch(getOneProduct(id))
+  
+      return () => {
+          dispatch(setProduct(null))
+      }
+
+    }, [dispatch, id])
+
+    const product = useSelector(state => state.product)
+
+    if (!product) {
+        return <div>Laddar...</div>
+    }
+
+
+
+  
+    return (
+  
     <div className="col">
       <div className="card h-100">
         <img
@@ -28,6 +51,10 @@ const ProductDetails = ({product}) => {
  </div>
 </div>
  )
+
+
+
 }
+
 
 export default ProductDetails;

@@ -8,17 +8,18 @@ export const getProductCatalog = () => {
   }
 }
 
-export const setProducts = (products) => {
+export const setProducts = products => {
   return {
     type: actiontypes().productCatalog.set,
     payload: products
   }
 }
 
-export const getOneProductCatalog = (id) => {
+export const getOneProduct = id => {
   return async dispatch => {
-    const res = await axios.get('http://localhost:3333/api/products/' + id)
+    const res = await axios.get('http://localhost:3333/api/products/:id')
     dispatch(setProduct(res.data))
+    
   }
 }
 

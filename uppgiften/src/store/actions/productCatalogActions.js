@@ -17,7 +17,7 @@ export const setProducts = products => {
 
 export const getOneProduct = id => {
   return async dispatch => {
-    const res = await axios.get('http://localhost:3333/api/products/:id')
+    const res = await axios.get(`http://localhost:3333/api/products/${id}`)
     dispatch(setProduct(res.data))
     
   }

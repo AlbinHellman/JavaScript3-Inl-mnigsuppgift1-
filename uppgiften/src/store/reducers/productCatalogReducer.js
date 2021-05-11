@@ -11,10 +11,9 @@ const productCatalogReducer = (state = initState, action) => {
      return state
      
       case actiontypes().productCatalog.setProduct:
-        return {
-          ...state,
-          product: action.payload
-        }
+          state = action.payload
+          return state
+        
     default:
       return state
   }

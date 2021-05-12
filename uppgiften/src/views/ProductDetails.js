@@ -7,30 +7,18 @@ import { useParams } from 'react-router-dom';
 
 const ProductDetails = () => {
 
-    const id = useParams().id
+    
   const dispatch = useDispatch();
  
 
   useEffect(() => {
-      dispatch(getOneProduct(id))
-  
-      return () => {
-          dispatch(setProduct(null))
-      }
+      dispatch(getOneProduct)
+  }, [dispatch])
 
-    }, [dispatch, id])
+    const product = useSelector(state => state.productCatalog)
+    const loading = useSelector(state => state.loading);
 
-    const product = useSelector(state => state.product)
-
-    if (!product) {
-        return <div>Laddar...</div>
-    }
-
-
-
-  
-    return (
-  
+   const _product = ( product &&
     <div className="col">
       <div className="card h-100">
         <img
@@ -52,9 +40,22 @@ const ProductDetails = () => {
 </div>
  )
 
+ return (
+    <div>
+        { _product } 
+        {loading && <p>Laddar...</p>}
+    </div>
+      )
+
 
 
 }
+    
+
+
+
+  
+
 
 
 export default ProductDetails;

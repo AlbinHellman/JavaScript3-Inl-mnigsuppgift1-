@@ -4,21 +4,40 @@ import actiontypes from '../actiontypes';
 export const getProductCatalog = () => {
   return async dispatch => {
     const res = await axios.get('http://localhost:3333/api/products')
-    dispatch(setProducts(res.data))
+
+    setTimeout(() => {
+      dispatch(loading(false));
+      dispatch(setProducts(res.data));
+    }, 1000)
+   
   }
 }
 
-export const setProducts = products => {
+export const loading = (payload) => {
+  return {
+    type: actiontypes().productCatalog.loading,
+    payload
+  }
+}
+
+export const setProducts = (productCatalog) => {
   return {
     type: actiontypes().productCatalog.set,
-    payload: products
+    payload: productCatalog
   }
 }
 
-export const getOneProduct = id => {
+export const getOneProduct = () => {
   return async dispatch => {
-    const res = await axios.get(`http://localhost:3333/api/products/${id}`)
-    dispatch(setProduct(res.data))
+    dispatch(loading(true));
+
+    const res = await axios.get('http://localhost:3333/api/products/_id')
+
+    setTimeout(() => {
+      dispatch(setProduct(res.data));
+      dispatch(loading(false));
+    }, 1000)
+    
     
   }
 }

@@ -22,10 +22,10 @@ const ProductCard = ({product}) => {
           <div className="card-text">
           <p>{ product.short }</p>
           <p className="text-danger h5">{ product.price }$</p>
-          <button className="btn btn-info" onClick={() => {
+          <button className="btn btn-info m-1" onClick={() => {
             dispatch(addToCart(product))
           }}>Add to cart</button>
-          <Link to={`/products/:id`}><button className="btn btn-info">View Product</button></Link>
+          <Link to={`/products/_id`}><button className="btn btn-info m-1">View Product</button></Link>
           </div>
         </div>
       </div>
@@ -34,3 +34,4 @@ const ProductCard = ({product}) => {
 }
 
 export default ProductCard
+

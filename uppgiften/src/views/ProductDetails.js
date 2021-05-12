@@ -2,6 +2,7 @@ import {React, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { getOneProduct, setProduct } from '../store/actions/productCatalogActions';
 import { useParams } from 'react-router-dom';
+import { addToCart } from '../store/actions/cartActions';
 
 
 

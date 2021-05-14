@@ -1,9 +1,10 @@
 const actiontypes = () => {
     return {
       productCatalog: {
-        set: 'SET_PRODUCT_CATALOG',
+        getProductCatalog: 'GET_POST',
+        setPosts: 'SET_PRODUCT_CATALOG',
         setProduct: 'SET_PRODUCT',
-        loading: 'LOADING',
+       
         
       },
    

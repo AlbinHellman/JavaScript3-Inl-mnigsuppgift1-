@@ -12,12 +12,12 @@ const Products = () => {
     dispatch(getProductCatalog())
   }, [dispatch])
 
-  const loading = useSelector(state => state.loading);
+  
 
   return (
     
     <div className="row row-cols-1 row-cols-md-3 g-4">
-      {loading && !productCatalog && <p>Laddar...</p>}
+      
       {
         productCatalog && productCatalog.map(product => (
           <ProductCard key={product._id} product={product} />

@@ -1,6 +1,8 @@
 import actiontypes from '../actiontypes';
 
-const initState = null;
+const initState = {
+product: true
+}
 
 
 
@@ -8,17 +10,17 @@ const productCatalogReducer = (state = initState, action) => {
   switch(action.type) {
     
     
-    case actiontypes().productCatalog.loading:
-        state = action.payload
-        return state
+
       
-    case actiontypes().productCatalog.set:
+    case actiontypes().productCatalog.setPosts:
      state = action.payload
      return state
      
       case actiontypes().productCatalog.setProduct:
-        state = action.payload
-        return state
+        return {
+          ...state,
+          product: action.payload
+        }
         
     default:
       return state

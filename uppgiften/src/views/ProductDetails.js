@@ -20,10 +20,10 @@ const ProductDetails = () => {
       }
   }, [dispatch, _id])
 
-    const product = useSelector(state => state.productCatalog)
-    const loading = useSelector(state => state.loading);
+    const product = useSelector(state => state.productCatalog.product)
+   
 
-   const _product = ( product &&
+    return (
     <div className="col">
       <div className="card h-100">
         <img
@@ -45,12 +45,7 @@ const ProductDetails = () => {
 </div>
  )
 
- return (
-    <div>
-        { _product } 
-        {loading && <p>Laddar...</p>}
-    </div>
-      )
+
 
 
 

@@ -25,7 +25,7 @@ const ProductCard = ({product}) => {
           <button className="btn btn-info m-1" onClick={() => {
             dispatch(addToCart(product))
           }}>Add to cart</button>
-          <Link to={`/products/_id`}><button className="btn btn-info m-1">View Product</button></Link>
+          <Link to={`/products/${product._id}`}><button className="btn btn-info m-1">View Product</button></Link>
           </div>
         </div>
       </div>

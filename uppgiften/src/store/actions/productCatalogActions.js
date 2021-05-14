@@ -27,11 +27,11 @@ export const setProducts = (productCatalog) => {
   }
 }
 
-export const getOneProduct = () => {
+export const getOneProduct = (_id) => {
   return async dispatch => {
     dispatch(loading(true));
 
-    const res = await axios.get('http://localhost:3333/api/products/_id')
+    const res = await axios.get(`http://localhost:3333/api/products/${_id}`)
 
     setTimeout(() => {
       dispatch(setProduct(res.data));

@@ -8,13 +8,17 @@ import { addToCart } from '../store/actions/cartActions';
 
 const ProductDetails = () => {
 
-    
+    const _id = useParams()._id
   const dispatch = useDispatch();
  
 
   useEffect(() => {
-      dispatch(getOneProduct)
-  }, [dispatch])
+      dispatch(getOneProduct(_id))
+
+      return () => {
+          dispatch(setProduct(null))
+      }
+  }, [dispatch, _id])
 
     const product = useSelector(state => state.productCatalog)
     const loading = useSelector(state => state.loading);

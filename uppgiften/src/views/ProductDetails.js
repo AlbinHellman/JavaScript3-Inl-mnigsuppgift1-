@@ -15,9 +15,7 @@ const ProductDetails = () => {
   useEffect(() => {
       dispatch(getOneProduct(_id))
 
-      return () => {
-          dispatch(setProduct(null))
-      }
+    
   }, [dispatch, _id])
 
     const product = useSelector(state => state.productCatalog.product)

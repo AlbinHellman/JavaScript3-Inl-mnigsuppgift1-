@@ -1,6 +1,7 @@
 import actiontypes from '../actiontypes';
 
 const initState = {
+  productCatalog: null,
 product: true
 }
 
@@ -13,8 +14,10 @@ const productCatalogReducer = (state = initState, action) => {
 
       
     case actiontypes().productCatalog.setPosts:
-     state = action.payload
-     return state
+     return {
+       ...state,
+       productCatalog: action.payload
+     }
      
       case actiontypes().productCatalog.setProduct:
         return {

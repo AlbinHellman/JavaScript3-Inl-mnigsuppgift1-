@@ -35,7 +35,7 @@ const ProductDetails = () => {
           <h5 className="card-title">{product.name}</h5>
           <div className="card-text">
           <p>{ product.short }</p>
-          <p className="text-danger h5">{ product.price }</p>
+          <p className="text-danger h5">{ product.price }$</p>
           <button className="btn btn-info" onClick={() => {
             dispatch(addToCart(product))
           }}>Add to cart</button>

@@ -7,7 +7,7 @@ const Navbar = () => {
     <div>
       <nav className="navbar navbar-expand-lg navbar-light bg-info">
         <div className="container">
-          <Link className="navbar-brand" to="/">LOGO</Link>
+          <Link className="navbar-brand" to="/">LOGGA</Link>
 
           <button
             className="navbar-toggler"

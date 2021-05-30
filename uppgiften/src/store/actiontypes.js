@@ -14,6 +14,10 @@ const actiontypes = () => {
         add: 'ADD_TO_CART',
         remove: 'REMOVE_FROM_CART',
         delete: 'DELETE_PRODUCT'
+      },
+      auth: {
+        login: 'LOGIN',
+        logout: 'LOGOUT'
       }
     }
   }

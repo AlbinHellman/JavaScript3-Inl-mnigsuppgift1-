@@ -3,7 +3,8 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Navbar from './komponenter/navigation/Navbar';
 import Home from './views/Hem';
 import Products from './views/Products';
-import ProductDetails from './views/ProductDetails'
+import ProductDetails from './views/ProductDetails';
+import Login from './views/Login';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/products" component={Products} />
+          <Route exact path="/login" component={Login} />
           <Route exact path="/products/:_id" component={ProductDetails} />
         </Switch>
       </div>

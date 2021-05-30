@@ -29,6 +29,7 @@ const Navbar = () => {
               <li className="nav-item">
                 <NavLink exact className="nav-link" to="/products">Products</NavLink>
               </li>
+              <li><NavLink exact to="/login" className="nav-link" activeClassName="active-link">Login</NavLink></li>
 
 
               <li className="nav-item dropdown">
